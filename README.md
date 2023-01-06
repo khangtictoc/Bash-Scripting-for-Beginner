@@ -36,17 +36,19 @@
    - 'while' statement
    - 'for' statement
    - 'readarray' command
-7. Processing file
+7. Command line option
+   - 'getopts' command for user interface option.
+8. Processing file
    - Check whether file exists, is folder, is null, is empty, ...
-8. Debugging
+9. Debugging
    - Use 'shellcheck' command to make debugging more comfortable.
-9.  Automation & Scheduling
+10.  Automation & Scheduling
    - 'at' command
    - 'crontab' command
    - 'anacron' command
    - Understand the difference between 3 commands above and when to use.
-10. Working & interact on remote server
+11. Working & interact on remote server
    - 'ssh', 'ssh-keygen' command. Set up **Public**, **Private** key
    - Use 'scp' to transfer file between host using `ssh` service
-11. Define & execute a function
+12. Define & execute a function
    - Know how to define a function for code management
