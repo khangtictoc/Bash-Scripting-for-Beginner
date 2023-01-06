@@ -1,0 +1,30 @@
+
+In 003 script1-broken.sh line 5:
+  case "$param" in
+  ^-- SC2213 (warning): getopts specified -n, but it's not handled by this 'case'. => No case for "n" option
+  ^-- SC2220 (warning): Invalid flags are not handled. Add a *) case. => Add wildcard case for invalid option
+
+
+In 003 script1-broken.sh line 7:
+    v) set -x ;;
+    ^-- SC2214 (warning): This case is not specified by getopts.
+
+
+In 003 script1-broken.sh line 12:
+  *.gz) gzip -d "$file" ;; 
+  ^--^ SC2221 (warning): This pattern always overrides a later one on line 14. => Force to overrides
+
+
+In 003 script1-broken.sh line 14:
+  *.tar.gz) tar xzf "$file" ;;
+  ^------^ SC2222 (warning): This pattern never matches because of a previous pattern on line 12. => The first condition is always matched before the third
+
+
+In 003 script1-broken.sh line 18:
+if [[ "$$(uname)" == "Linux" ]]
+                  ^-- SC2193 (warning): The arguments to this comparison can never be equal. Make sure your syntax is correct. => Remove a 'dollar' sign
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2193 -- The arguments to this comparison ...
+  https://www.shellcheck.net/wiki/SC2213 -- getopts specified -n, but it's no...
+  https://www.shellcheck.net/wiki/SC2214 -- This case is not specified by get...

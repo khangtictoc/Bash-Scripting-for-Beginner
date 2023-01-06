@@ -1,0 +1,27 @@
+
+In 003 script2-broken.sh line 3:
+if ! grep -q backup=true.* "~/.myconfig"
+             ^-----------^ SC2062 (warning): Quote the grep pattern so the shell won't interpret it. 
+             			=> Double quote this grep pattern
+                            ^---------^ SC2088 (warning): Tilde does not expand in quotes. Use $HOME. 
+				=> As suggested, use '$HOME' for EXPANSION
+
+In 003 script2-broken.sh line 5:
+  echo 'Backup not enabled in $HOME/.myconfig, exiting'
+       ^-- SC2016 (info): Expressions don't expand in single quotes, use double quotes for that.
+				=> As suggested, use double quote for EXPANSION
+
+In 003 script2-broken.sh line 9:
+tar -cf  “$1/my_backup_$(date +%d-%m-%Y_%H-%M-%S).tar” "$HOME"
+         ^-- SC1110 (warning): This is a unicode quote. Delete and retype it (or quote to make literal).
+          ^-- SC2086 (info): Double quote to prevent globbing and word splitting.
+                       ^------------------------^ SC2046 (warning): Quote this to prevent word splitting.
+                                                     ^-- SC1110 (warning): This is a unicode quote. Delete and retype it (or quote to make literal).
+				=> The double quote in Unicode format, retype the double quote. (Notice its shape)
+Did you mean: 
+tar -cf  “"$1"/my_backup_$(date +%d-%m-%Y_%H-%M-%S).tar” "$HOME"
+
+For more information:
+  https://www.shellcheck.net/wiki/SC1110 -- This is a unicode quote. Delete a...
+  https://www.shellcheck.net/wiki/SC2046 -- Quote this to prevent word splitt...
+  https://www.shellcheck.net/wiki/SC2062 -- Quote the grep pattern so the she...
