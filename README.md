@@ -24,31 +24,31 @@
    - Word splitting
    - Globbing
 4. Interact with user input
-   - 'read' command for input string.
-   - 'select' command for choosing options.
+   - `read` command for input string.
+   - `select` command for choosing options.
 5. Logic Statement (condition)
    - Chaining command, list operator: `||`, `&&`, `&`, `;`
-   - 'test' command for check conditions
-   - 'if' statement
-   - 'case' statement
+   - `test` command for check conditions
+   - `if` statement
+   - `case` statement
 6. Array & Looping statement
    - Create & handle array, read element's value, properties(length), ...
-   - 'while' statement
-   - 'for' statement
-   - 'readarray' command
+   - `while` statement
+   - `for` statement
+   - `readarray` command
 7. Command line option
-   - 'getopts' command for user interface option.
+   - `getopts` command for user interface option.
 8. Processing file
    - Check whether file exists, is folder, is null, is empty, ...
 9. Debugging
-   - Use 'shellcheck' command to make debugging more comfortable.
+   - Use `shellcheck` command to make debugging more comfortable.
 10.  Automation & Scheduling
-   - 'at' command
-   - 'crontab' command
-   - 'anacron' command
+   - `at` command
+   - `crontab` command. Know how to specify time in 6 columns
+   - `anacron` command
    - Understand the difference between 3 commands above and when to use.
 11. Working & interact on remote server
-   - 'ssh', 'ssh-keygen' command. Set up **Public**, **Private** key
-   - Use 'scp' to transfer file between host using `ssh` service
+   - `ssh`, `ssh-keygen` command. Set up **Public**, **Private** key
+   - Use `scp` to transfer file between host using `ssh` service
 12. Define & execute a function
    - Know how to define a function for code management
